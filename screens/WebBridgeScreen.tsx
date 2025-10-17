@@ -8,10 +8,6 @@ let publishNativeSnap: ((snap: BridgeResponse) => void) | null = null;
 
 // 브릿지 구현
 export const appBridge = bridge({
-  async ping() {
-    console.log('[RN] ping called');
-    return 'pong';
-  },
   async requestInfo(): Promise<BridgeResponse> {
     const state = await Network.getNetworkStateAsync();
     const network =
@@ -25,7 +21,6 @@ export const appBridge = bridge({
 
     const number = Math.floor(Math.random() * 100) + 1;
     const snap = { network, number };
-    console.log('[RN] requestInfo generated:', snap);
 
     try {
       publishNativeSnap?.(snap);
@@ -37,15 +32,18 @@ export const appBridge = bridge({
   },
 });
 
+// WebView 컴포넌트 생성
 export const { WebView } = createWebView({ bridge: appBridge, debug: true });
 
 export default function WebBridgeScreen() {
   const webRef = useRef<React.ComponentRef<typeof WebView>>(null);
   const [nativeSnap, setNativeSnap] = useState<BridgeResponse | null>(null);
 
-  // 네이티브 스냅퍼 등록
+  // 네이티브 상태 업데이트 함수
   useEffect(() => {
     publishNativeSnap = setNativeSnap;
+
+    // 언마운트 시 정리
     return () => {
       if (publishNativeSnap === setNativeSnap) publishNativeSnap = null;
     };
