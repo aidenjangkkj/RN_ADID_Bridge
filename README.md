@@ -2,8 +2,8 @@
 
 # 📱 RN WebBridge Demo App
 
-> **React Native (Expo) + Next.js + WebView Bridge 통신 + 광고 ID + APK 빌드**
-> Native ↔ Web 양방향 데이터 교환 및 Android 광고 ID 조회 기능을 포함한 실습 프로젝트
+**React Native (Expo) + Next.js + WebView Bridge 통신 + 광고 ID + APK 빌드**
+ Native ↔ Web 양방향 데이터 교환 및 Android 광고 ID 조회 기능을 포함한 실습 프로젝트
 
 ---
 
