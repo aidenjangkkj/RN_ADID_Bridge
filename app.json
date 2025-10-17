@@ -3,35 +3,50 @@
     "name": "my-expo-app",
     "slug": "my-expo-app",
     "version": "1.0.0",
-
     "web": {
       "favicon": "./assets/favicon.png"
     },
-
     "experiments": {
       "tsconfigPaths": true
     },
-
-    "plugins": [],
-
+    "plugins": [
+      [
+        "expo-tracking-transparency",
+        {
+          "userTrackingPermission": "광고 ID 수집을 위해 사용자의 동의가 필요합니다."
+        }
+      ]
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
+      "infoPlist": {
+        "NSUserTrackingUsageDescription": "광고 ID 수집을 위해 사용자의 동의가 필요합니다."
+      },
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.myexpoapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9e50159d-1f3f-40b4-a89e-6240bcf516f1"
       }
     }
   }
