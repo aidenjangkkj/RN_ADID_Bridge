@@ -102,7 +102,7 @@ UI:
 
 ## 🛠️ 빌드 & 배포
 
-(https://expo.dev/accounts/aidenjang/projects/my-expo-app/builds/4d879a92-677f-4bcc-aff6-364716c2b0c2)
+[APK](https://expo.dev/accounts/aidenjang/projects/my-expo-app/builds/4d879a92-677f-4bcc-aff6-364716c2b0c2)
 
 ---
 
