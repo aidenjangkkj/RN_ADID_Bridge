@@ -10,6 +10,8 @@ export default function WebViewScreen() {
         startInLoadingState={true}
         javaScriptEnabled={true}
         domStorageEnabled={true}
+        setBuiltInZoomControls={true}
+        setDisplayZoomControls={false}
       />
     </View>
   );
