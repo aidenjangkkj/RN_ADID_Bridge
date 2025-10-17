@@ -1,5 +1,3 @@
----
-
 # 📱 RN WebBridge Demo App
 
 **React Native (Expo) + Next.js + WebView Bridge 통신 + 광고 ID + APK 빌드**
